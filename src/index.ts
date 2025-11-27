@@ -1,15 +1,6 @@
 import { Elysia } from "elysia";
 
-export default new Elysia()
-	.get("/", () => "Hello Vercel Function")
-	.get("/test", ({ cookie }) => {
-		cookie.testCookie.set({
-			value: "Vercel",
-		});
-
-		cookie.secondCookie.set({
-			value: "Vercel",
-		});
-
-		return "Cookie set";
-	});
+export default new Elysia().get("/", ({ cookie, redirect }) => {
+	cookie.testCookie.value = "cookie value";
+	return redirect("https://example.com");
+});
