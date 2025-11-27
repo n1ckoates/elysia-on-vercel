@@ -7,5 +7,9 @@ export default new Elysia()
 			value: "Vercel",
 		});
 
+		cookie.secondCookie.set({
+			value: "Vercel",
+		});
+
 		return "Cookie set";
 	});
